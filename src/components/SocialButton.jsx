@@ -2,7 +2,9 @@ const SocialButton = () => {
   return (
     <>
       <div>
-        <h1>Redes Sociales</h1>
+        <i className="fa-brands fa-facebook fa-3x"></i>
+        <i className="fa-brands fa-github fa-3x"></i>
+        <i className="fa-brands fa-linkedin fa-3x"></i>
       </div>
     </>
   )
