@@ -6,7 +6,7 @@ const Registro = () => {
   return (
     <>
       <div>
-        <h1>Este es el Registro</h1>
+        <h1>Crea una cuenta</h1>
         <SocialButton />
         <Formulario />
         <Alert />
