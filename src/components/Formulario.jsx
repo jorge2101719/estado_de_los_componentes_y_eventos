@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import '../App.css'
 
 const Formulario = () => {
   const [nombre, setNombre] = useState("");
@@ -33,7 +34,7 @@ const Formulario = () => {
     setEmail(""); 
     setPassword("");
     setPassword2("");
-    
+
   }
 
   
@@ -67,7 +68,7 @@ const Formulario = () => {
         <form className="formulario" onSubmit={validarDatos}>
         {error ? <p>Todos los campos son obligatorios</p> : passworderror ? <p>Las contraseñas no coinciden</p> : null}
         <div className="form-group">
-          <label>Nombre: </label>
+          <label for='nombre'>Nombre: </label>
           <input
             type="text"
             name="nombre"
@@ -78,7 +79,7 @@ const Formulario = () => {
           </div>
 
           <div className="form-group">
-          <label>Apellido: </label>
+          <label for='apellido'>Apellido: </label>
           <input
             type="text"
             name="apellido"
@@ -89,7 +90,7 @@ const Formulario = () => {
           </div>
 
           <div className="form-group">
-          <label>E-mail: </label>
+          <label for='email'>E-mail: </label>
           <input
             type="email"
             name="email"
@@ -100,7 +101,7 @@ const Formulario = () => {
           </div>
 
           <div className="form-group">
-          <label>Contraseña: </label>
+          <label for='password'>Contraseña: </label>
           <input
             type="password"
             name="password"
@@ -111,7 +112,7 @@ const Formulario = () => {
           </div>
 
           <div className="form-group">
-          <label>Repita su contraseña: </label>
+          <label for='password2'>Repita su contraseña: </label>
           <input
             type="password"
             name="password2"
