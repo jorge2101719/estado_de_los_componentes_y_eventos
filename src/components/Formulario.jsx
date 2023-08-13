@@ -33,7 +33,7 @@ const Formulario = () => {
     setEmail(""); 
     setPassword("");
     setPassword2("");
-
+    
   }
 
   
@@ -64,7 +64,8 @@ const Formulario = () => {
     <>
     
       <div>
-        <form className="formulario" onSubmit={validarDatos}>{error ? <p>Todos los campos son obligatorios</p> : passworderror ? <p>Las contraseñas no coinciden</p> : null}
+        <form className="formulario" onSubmit={validarDatos}>
+        {error ? <p>Todos los campos son obligatorios</p> : passworderror ? <p>Las contraseñas no coinciden</p> : null}
         <div className="form-group">
           <label>Nombre: </label>
           <input

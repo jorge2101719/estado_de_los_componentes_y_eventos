@@ -9,6 +9,7 @@ const Registro = () => {
       <div>
         <h1>Crea una cuenta</h1>
         <div className="social"><SocialButton /></div>
+        <div>O usa tu email para registrarte</div>
         <div className="Formulario"><Formulario /></div>        
         <div className="Alertas"><Alert /></div>
       </div>  
