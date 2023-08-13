@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Algo en App</h1>
+        {/* <h1>Algo en App</h1> */}
         <Registro />
       </div>
     </>
