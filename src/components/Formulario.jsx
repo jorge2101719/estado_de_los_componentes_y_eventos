@@ -14,6 +14,7 @@ const Formulario = () => {
   const [error, setError] = useState(false);
   const [passworderror, setPasswordError] = useState(false);
   const [errorlog, setErrorLog] = useState(false);
+  /* const [mensaje, setMensaje] = useState(""); */
 
   const validarDatos = (e) => {
     e.preventDefault();
@@ -49,6 +50,16 @@ const Formulario = () => {
     setPasswordLog("");
   
   }
+  /*
+  const Mensajelog = (e) => {
+    if(emaillog === "" || passwordlog === ""){
+      alert("Logeo exitoso")
+      return;
+    }
+
+    setMensaje("LOGIN EXITOSO")
+  }*/
+
   return (
     <>
     
@@ -145,9 +156,11 @@ const Formulario = () => {
           </div>
 
           
-          <button type="submit" className="btn btn-primary"> 
+          <button type="submit" className="btn btn-primary" >
           INICIAR SESIÓN 
+          
           </button>
+          
 
         </form>
       </div>  

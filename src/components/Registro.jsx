@@ -1,7 +1,7 @@
 import Formulario from "./Formulario";
 import SocialButton from "./SocialButton";
 import Alert from "./Alert"
-import Login from "./Login";
+
 
 const Registro = () => {
   return (
