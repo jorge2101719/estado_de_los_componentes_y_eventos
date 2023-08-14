@@ -1,10 +1,8 @@
-
-
-const Alert = ({alerta}) => {
+const Alert = ({datosPadre}) => {
   return (
     <>
       <div>
-        {alerta}
+        {datosPadre}
       </div>
     </>
   )

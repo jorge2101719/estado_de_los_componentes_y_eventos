@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import '../App.css';
+import Button from 'react-bootstrap/Button';
+import Alert from './Alert';
 
 const Formulario = () => {
   const [nombre, setNombre] = useState("");
@@ -7,7 +9,6 @@ const Formulario = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
-
   
   const [emaillog, setEmailLog] = useState("");
   const [passwordlog, setPasswordLog] = useState("");
@@ -37,8 +38,6 @@ const Formulario = () => {
 
   }
 
-  
-
   const ValidarLog = (e) => {
     e.preventDefault();
     if(emaillog === "" || passwordlog === ""){
@@ -51,15 +50,12 @@ const Formulario = () => {
     setPasswordLog("");
   
   }
-  /*
-  const Mensajelog = (e) => {
-    if(emaillog === "" || passwordlog === ""){
-      alert("Logeo exitoso")
-      return;
-    }
 
-    setMensaje("LOGIN EXITOSO")
-  }*/
+  const [datos, setDatos] = useState('');
+  
+  const datosPadre = () => {
+    setDatos("Datos correctos...");
+  }
 
   return (
     <>
@@ -69,7 +65,7 @@ const Formulario = () => {
         <form className="formulario" onSubmit={validarDatos}>
         {error ? <p className='btn-danger p-1'>Todos los campos son obligatorios</p> : passworderror ? <p className='btn-danger p-1'>Las contraseñas no coinciden</p> : null}
         <div className="form-group">
-          <label for='nombre'>Nombre: </label>
+          <label>Nombre: </label>
           <input
             type="text"
             name="nombre"
@@ -80,7 +76,7 @@ const Formulario = () => {
           </div>
 
           <div className="form-group">
-          <label for='apellido'>Apellido: </label>
+          <label>Apellido: </label>
           <input
             type="text"
             name="apellido"
@@ -91,7 +87,7 @@ const Formulario = () => {
           </div>
 
           <div className="form-group">
-          <label for='email'>E-mail: </label>
+          <label>E-mail: </label>
           <input
             type="email"
             name="email"
@@ -102,7 +98,7 @@ const Formulario = () => {
           </div>
 
           <div className="form-group">
-          <label for='password'>Contraseña: </label>
+          <label>Contraseña: </label>
           <input
             type="password"
             name="password"
@@ -113,7 +109,7 @@ const Formulario = () => {
           </div>
 
           <div className="form-group">
-          <label for='password2'>Repita su contraseña: </label>
+          <label>Repita su contraseña: </label>
           <input
             type="password"
             name="password2"
@@ -124,9 +120,9 @@ const Formulario = () => {
           </div>
 
           {/* Botón para procesar el formulario (punto 4) */}
-          <button type="submit" className="btn btn-primary"> 
+          <Button type="submit" variant="primary"> 
           REGISTRAR 
-          </button>
+          </Button>
 
         </form>
       </div>  
@@ -135,7 +131,7 @@ const Formulario = () => {
 
 
       <div>
-        <h1 classname="Logeo">¿Ya tienes cuenta?, Iniciar Sesión</h1>
+        <h1>¿Ya tienes cuenta?, Iniciar Sesión</h1>
         <form className="formulario" onSubmit={ValidarLog}>{errorlog ? <p className='btn-danger p-1'>Ingrese los datos</p> : null}
         
           <div className="form-group">
@@ -161,11 +157,14 @@ const Formulario = () => {
           </div>
 
           
-          <button type="submit" className='btn btn-primary'>
+          <Button type="submit" variant='primary' onClick={() => {datosPadre()} }>
           INICIAR SESIÓN
-          </button>
+          </Button>
+
+          <Alert datosPadre={datos} />
 
         </form>
+
       </div>  
       
     </>
