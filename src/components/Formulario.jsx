@@ -1,11 +1,7 @@
 import {useState} from 'react';
-import '../App.css';
-<<<<<<< HEAD
+import '../App.css'
 import Button from 'react-bootstrap/Button';
 import Alert from './Alert';
-=======
-import { Alert } from 'bootstrap';
->>>>>>> 220c22315b08587ec717b00dc37b65d844f08d46
 
 const Formulario = () => {
   const [nombre, setNombre] = useState("");
@@ -13,13 +9,10 @@ const Formulario = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
-<<<<<<< HEAD
-=======
+
   const [edad, setEdad] = useState("");
   const {genero, setGenero} = useState("");
 
->>>>>>> 220c22315b08587ec717b00dc37b65d844f08d46
-  
   const [emaillog, setEmailLog] = useState("");
   const [passwordlog, setPasswordLog] = useState("");
 
@@ -128,9 +121,9 @@ const Formulario = () => {
           </div>
 
           <div className="form-group">
-<<<<<<< HEAD
+
           <label>Contraseña: </label>
-=======
+
           <label for='edad'>Edad: </label>
           <input
             type="text"
@@ -153,7 +146,7 @@ const Formulario = () => {
 
           <div className="form-group">
           <label for='password'>Contraseña: </label>
->>>>>>> 220c22315b08587ec717b00dc37b65d844f08d46
+
           <input
             type="password"
             name="password"
@@ -217,15 +210,10 @@ const Formulario = () => {
           </Button>
 
           <Alert datosPadre={datos} />
-
         </form>
 
       </div>  
       
-      {/*}) <div>
-        <login onlogin={handleLogin} />
-        <Alert message={alertmessage} />
-      </div>({*/}
     </>
   )
 }
