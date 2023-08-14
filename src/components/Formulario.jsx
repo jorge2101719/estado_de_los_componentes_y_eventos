@@ -134,7 +134,7 @@ const Formulario = () => {
           />
           </div>
 
-          <div className="form-group">
+          {/* <div className="form-group">
           <select value='' 
             onChange={(e) => console.log(e.target.value)}>
             <option>Género</option>
@@ -142,7 +142,7 @@ const Formulario = () => {
             <option value={'f'}>F</option>
             <option value={'otro'}>Otro</option>
             </select>
-          </div>
+          </div> */}
 
           <div className="form-group">
           <label for='password'>Contraseña: </label>
