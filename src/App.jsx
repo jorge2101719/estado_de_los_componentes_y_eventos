@@ -11,8 +11,7 @@ function App() {
 
   return (
     <>
-      <div>
-        {/* <h1>Algo en App</h1> */}
+      <div className='mainContainer'>
         <Registro />
       </div>
     </>

@@ -1,11 +1,10 @@
 
 
-const Alert = () => {
+const Alert = ({alerta}) => {
   return (
     <>
       <div>
-        <h1>Alerta</h1>
-        
+        {alerta}
       </div>
     </>
   )

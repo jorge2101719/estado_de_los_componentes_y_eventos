@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import '../App.css'
+import '../App.css';
 
 const Formulario = () => {
   const [nombre, setNombre] = useState("");
@@ -63,10 +63,11 @@ const Formulario = () => {
 
   return (
     <>
-    
+      {/* Formulario con los eventos onSubmit, onChange, */}
+      {/* estados en general: errores y eventos (puntos 3 y 4) */}
       <div>
         <form className="formulario" onSubmit={validarDatos}>
-        {error ? <p>Todos los campos son obligatorios</p> : passworderror ? <p>Las contraseñas no coinciden</p> : null}
+        {error ? <p className='warning'>Todos los campos son obligatorios</p> : passworderror ? <p className='warning'>Las contraseñas no coinciden</p> : null}
         <div className="form-group">
           <label for='nombre'>Nombre: </label>
           <input
@@ -122,6 +123,7 @@ const Formulario = () => {
           />
           </div>
 
+          {/* Botón para procesar el formulario (punto 4) */}
           <button type="submit" className="btn btn-primary"> 
           REGISTRAR 
           </button>
@@ -158,11 +160,9 @@ const Formulario = () => {
           </div>
 
           
-          <button type="submit" className="btn btn-primary" >
-          INICIAR SESIÓN 
-          
+          <button type="submit" className='btn btn-primary'>
+          INICIAR SESIÓN
           </button>
-          
 
         </form>
       </div>  
