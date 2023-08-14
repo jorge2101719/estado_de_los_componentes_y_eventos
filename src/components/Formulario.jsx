@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import '../App.css';
+import { Alert } from 'bootstrap';
 
 const Formulario = () => {
   const [nombre, setNombre] = useState("");
@@ -7,6 +8,8 @@ const Formulario = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
+  const [edad, setEdad] = useState("");
+  const {genero, setGenero} = useState("");
 
   
   const [emaillog, setEmailLog] = useState("");
@@ -14,26 +17,43 @@ const Formulario = () => {
 
   const [error, setError] = useState(false);
   const [passworderror, setPasswordError] = useState(false);
+  const [errorEdad, setErroredad] = useState(false);
   const [errorlog, setErrorLog] = useState(false);
-  /* const [mensaje, setMensaje] = useState(""); */
+
+
+  /*const [alertmessage, setAlertMessage] = useState(false);
+  const handleLogin = (email,password) => {
+    if(email === "" || password === ""){
+      setAlertMessage("Login exitoso");
+      setAlertType("alert-success");
+    } else {
+      setAlertMeesage("Error de datos, intente nuevamente");
+      setAlertType("alert-danger");
+    }
+  }*/
 
   const validarDatos = (e) => {
     e.preventDefault();
-    if(nombre === "" || apellido === "" || email === "" || password === "" || password2 === ""){
+    if(nombre === "" || apellido === "" || email === "" || password === "" || password2 === "" || edad === "" || genero === "" ){
       setError(true);
       return;
     } else if(password != password2){
       setPasswordError(true);
       return;
+    } else if(edad < 18){
+      setErroredad(true);
+      return;
     }
 
     setError(false);
     setPasswordError(false);
+    setErroredad(false);
     setNombre("");
     setApellido("");
     setEmail(""); 
     setPassword("");
     setPassword2("");
+    setEdad("");
 
   }
 
@@ -67,7 +87,10 @@ const Formulario = () => {
       {/* estados en general: errores y eventos (puntos 3 y 4) */}
       <div>
         <form className="formulario" onSubmit={validarDatos}>
-        {error ? <p className='btn-danger p-1'>Todos los campos son obligatorios</p> : passworderror ? <p className='btn-danger p-1'>Las contraseñas no coinciden</p> : null}
+        {error ? <p className='btn-danger p-1'>Todos los campos son obligatorios</p> : null}
+        {passworderror ? <p className='btn-danger p-1'>Las contraseñas no coinciden</p> :  null}
+        {errorEdad ? <p className='btn-danger p-1'>Debe ser mayor de 18 años</p> : null}
+
         <div className="form-group">
           <label for='nombre'>Nombre: </label>
           <input
@@ -99,6 +122,27 @@ const Formulario = () => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
+          </div>
+
+          <div className="form-group">
+          <label for='edad'>Edad: </label>
+          <input
+            type="text"
+            name="edad"
+            className="form-control"
+            onChange={(e) => setEdad(e.target.value)}
+            value={edad}
+          />
+          </div>
+
+          <div className="form-group">
+          <select value='' 
+            onChange={(e) => console.log(e.target.value)}>
+            <option>Género</option>
+            <option value={'m'}>M</option>
+            <option value={'f'}>F</option>
+            <option value={'otro'}>Otro</option>
+            </select>
           </div>
 
           <div className="form-group">
@@ -168,6 +212,10 @@ const Formulario = () => {
         </form>
       </div>  
       
+      {/*}) <div>
+        <login onlogin={handleLogin} />
+        <Alert message={alertmessage} />
+      </div>({*/}
     </>
   )
 }
