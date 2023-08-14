@@ -1,7 +1,11 @@
 import {useState} from 'react';
 import '../App.css';
+<<<<<<< HEAD
 import Button from 'react-bootstrap/Button';
 import Alert from './Alert';
+=======
+import { Alert } from 'bootstrap';
+>>>>>>> 220c22315b08587ec717b00dc37b65d844f08d46
 
 const Formulario = () => {
   const [nombre, setNombre] = useState("");
@@ -9,32 +13,55 @@ const Formulario = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
+<<<<<<< HEAD
+=======
+  const [edad, setEdad] = useState("");
+  const {genero, setGenero} = useState("");
+
+>>>>>>> 220c22315b08587ec717b00dc37b65d844f08d46
   
   const [emaillog, setEmailLog] = useState("");
   const [passwordlog, setPasswordLog] = useState("");
 
   const [error, setError] = useState(false);
   const [passworderror, setPasswordError] = useState(false);
+  const [errorEdad, setErroredad] = useState(false);
   const [errorlog, setErrorLog] = useState(false);
-  /* const [mensaje, setMensaje] = useState(""); */
+
+
+  /*const [alertmessage, setAlertMessage] = useState(false);
+  const handleLogin = (email,password) => {
+    if(email === "" || password === ""){
+      setAlertMessage("Login exitoso");
+      setAlertType("alert-success");
+    } else {
+      setAlertMeesage("Error de datos, intente nuevamente");
+      setAlertType("alert-danger");
+    }
+  }*/
 
   const validarDatos = (e) => {
     e.preventDefault();
-    if(nombre === "" || apellido === "" || email === "" || password === "" || password2 === ""){
+    if(nombre === "" || apellido === "" || email === "" || password === "" || password2 === "" || edad === "" || genero === "" ){
       setError(true);
       return;
     } else if(password != password2){
       setPasswordError(true);
       return;
+    } else if(edad < 18){
+      setErroredad(true);
+      return;
     }
 
     setError(false);
     setPasswordError(false);
+    setErroredad(false);
     setNombre("");
     setApellido("");
     setEmail(""); 
     setPassword("");
     setPassword2("");
+    setEdad("");
 
   }
 
@@ -63,7 +90,10 @@ const Formulario = () => {
       {/* estados en general: errores y eventos (puntos 3 y 4) */}
       <div>
         <form className="formulario" onSubmit={validarDatos}>
-        {error ? <p className='btn-danger p-1'>Todos los campos son obligatorios</p> : passworderror ? <p className='btn-danger p-1'>Las contraseñas no coinciden</p> : null}
+        {error ? <p className='btn-danger p-1'>Todos los campos son obligatorios</p> : null}
+        {passworderror ? <p className='btn-danger p-1'>Las contraseñas no coinciden</p> :  null}
+        {errorEdad ? <p className='btn-danger p-1'>Debe ser mayor de 18 años</p> : null}
+
         <div className="form-group">
           <label>Nombre: </label>
           <input
@@ -98,7 +128,32 @@ const Formulario = () => {
           </div>
 
           <div className="form-group">
+<<<<<<< HEAD
           <label>Contraseña: </label>
+=======
+          <label for='edad'>Edad: </label>
+          <input
+            type="text"
+            name="edad"
+            className="form-control"
+            onChange={(e) => setEdad(e.target.value)}
+            value={edad}
+          />
+          </div>
+
+          <div className="form-group">
+          <select value='' 
+            onChange={(e) => console.log(e.target.value)}>
+            <option>Género</option>
+            <option value={'m'}>M</option>
+            <option value={'f'}>F</option>
+            <option value={'otro'}>Otro</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+          <label for='password'>Contraseña: </label>
+>>>>>>> 220c22315b08587ec717b00dc37b65d844f08d46
           <input
             type="password"
             name="password"
@@ -167,6 +222,10 @@ const Formulario = () => {
 
       </div>  
       
+      {/*}) <div>
+        <login onlogin={handleLogin} />
+        <Alert message={alertmessage} />
+      </div>({*/}
     </>
   )
 }
