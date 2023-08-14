@@ -37,11 +37,17 @@
 }
 
 .formulario {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   gap: 10px;
+}
+
+.fantasma {
+  visibility: hidden;
+  margin: 20px;
 }
 
 

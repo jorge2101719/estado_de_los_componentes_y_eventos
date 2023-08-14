@@ -67,7 +67,7 @@ const Formulario = () => {
       {/* estados en general: errores y eventos (puntos 3 y 4) */}
       <div>
         <form className="formulario" onSubmit={validarDatos}>
-        {error ? <p className='warning'>Todos los campos son obligatorios</p> : passworderror ? <p className='warning'>Las contraseñas no coinciden</p> : null}
+        {error ? <p className='btn-danger p-1'>Todos los campos son obligatorios</p> : passworderror ? <p className='btn-danger p-1'>Las contraseñas no coinciden</p> : null}
         <div className="form-group">
           <label for='nombre'>Nombre: </label>
           <input
@@ -131,11 +131,12 @@ const Formulario = () => {
         </form>
       </div>  
 
-      
+      <div className='fantasma'>Esto no es visible</div>
+
 
       <div>
         <h1 classname="Logeo">¿Ya tienes cuenta?, Iniciar Sesión</h1>
-        <form className="formulario" onSubmit={ValidarLog}>{errorlog ? <p>Ingrese los datos</p> : null}
+        <form className="formulario" onSubmit={ValidarLog}>{errorlog ? <p className='btn-danger p-1'>Ingrese los datos</p> : null}
         
           <div className="form-group">
           <label>E-mail: </label>
