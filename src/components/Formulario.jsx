@@ -122,8 +122,6 @@ const Formulario = () => {
 
           <div className="form-group">
 
-          <label>Contraseña: </label>
-
           <label for='edad'>Edad: </label>
           <input
             type="text"
@@ -134,15 +132,16 @@ const Formulario = () => {
           />
           </div>
 
-          {/* <div className="form-group">
+          <div className="form-group">
+          <label for='password'>Genero:  </label>
           <select value='' 
             onChange={(e) => console.log(e.target.value)}>
-            <option>Género</option>
+            <option>Seleccione su género</option>
             <option value={'m'}>M</option>
             <option value={'f'}>F</option>
             <option value={'otro'}>Otro</option>
             </select>
-          </div> */}
+          </div> 
 
           <div className="form-group">
           <label for='password'>Contraseña: </label>
